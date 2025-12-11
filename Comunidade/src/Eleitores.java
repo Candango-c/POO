@@ -15,8 +15,13 @@ public class Eleitores {
     //
 
     //Set e Get do Estado
-    public void setEstado(String E){
-        this.Estado = E;
+    public void setEstado(String E)throws Exception{
+
+        if(!E.equals("ES") && !E.equals("SP")){
+            throw new Exception("O estado deve ser ES ou SP");
+        }else {
+            this.Estado = E;
+        }
     }
 
     public String getEstado(){
@@ -35,7 +40,7 @@ public class Eleitores {
     //
 
     //Construtora Completo
-    public Eleitores(String N, String E, String T){
+    public Eleitores(String N, String E, String T)throws Exception{
         setNome(N);
         setEstado(E);
         setTituloEleitoral(T);
@@ -43,7 +48,7 @@ public class Eleitores {
     //
 
     //Construtora Titulo Estado
-    public Eleitores(String E, String T){
+    public Eleitores(String E, String T)throws Exception{
         setEstado(E);
         setTituloEleitoral(T);
     }

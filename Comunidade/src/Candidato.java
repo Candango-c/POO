@@ -19,7 +19,7 @@ public abstract class Candidato {
     //Set e Get do Estado
     public void setEstado(String E)throws Exception{
 
-        if(E != "ES" && E != "SP"){
+        if(!E.equals("ES") && !E.equals("SP")){
             throw new Exception("O estado deve ser ES ou SP");
         }else {
             this.Estado = E;
